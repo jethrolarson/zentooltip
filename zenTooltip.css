@@ -1,0 +1,14 @@
+/* Feel free to edit or discard these styles. */
+#tooltip{
+  display:none;
+  position: absolute; /*required*/
+  min-width: 100px; max-width: 240px;
+  border: 1px solid #ccc;
+  background: #eee url(tt_bg.png) repeat-x;
+  box-shadow:0 2px 3px #bbb;
+  -moz-box-shadow:0 2px 3px #bbb;
+  -webkit-box-shadow:0 2px 3px #bbb;
+  box-shadow:0 2px 3px #ddd;
+  text-align:left;}
+  #tooltipIWrap{margin: 5px 10px}
+    #tooltip h4{margin: 10px 0 5px;}
