@@ -32,7 +32,7 @@
 (function($){
   $.fn.zenTooltip = function(settings){
     var $elems = this;
-    settings = jQuery.extend({
+    settings = $.extend({
       "delay": 300,
       "mouseOffset": {"left":11, "top":23},
       "useFormatting": true,
