@@ -13,11 +13,11 @@
  *   #tooltip{display:none; position: absolute}
  *   Beyond that feel free to go nuts. 
  *
- * @name zenTooltip {@link http://code.google.com/p/zentooltip}
+ * @name zentooltip {@link http://code.google.com/p/zentooltip}
  * @type jQuery
  * @cat Plugins/UI
  * @requires jQuery 1.2 or higher {@link http://jquery.com}
- * @example $([elements with tooltip]).zenTooltip()
+ * @example $([elements with tooltip]).zentooltip()
  * @param {Object} [settings] settings to configure the tooltip.
  * @param {Number} [settings.delay=300] Hover delay before the tooltip is shown 
  * @param {Object} [settings.mouseOffset={left: 12, top: 22}] Position of tooltip from cursor 
@@ -30,7 +30,7 @@
  * @param {String} [settings.tooltipClass] Adds a optional class to the tooltip
  */
 (function($){
-  $.fn.zenTooltip = function(settings){
+  $.fn.zentooltip = function(settings){
     var $elems = this;
     settings = $.extend({
       "delay": 300,
