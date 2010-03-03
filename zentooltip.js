@@ -1,34 +1,15 @@
-/**
- * @fileOverview Date: 2009-04-6
- * Licensed under Mozilla Public License 1.1 {@link http://www.mozilla.org/MPL/}
- * @author <a href="mailto:jethrolarson@gmail.com">Jethro Larson</a>
- * @version 12
- */
- 
-/** 
- * Unobtrusively augments the title attribute of html elements 
- * allowing additional formatting and style.
- * 
- * The only CSS properties required are 
- *   #tooltip{display:none; position: absolute}
- *   Beyond that feel free to go nuts. 
- *
- * @name zentooltip {@link http://code.google.com/p/zentooltip}
- * @type jQuery
- * @cat Plugins/UI
- * @requires jQuery 1.2 or higher {@link http://jquery.com}
- * @example $([elements with tooltip]).zentooltip()
- * @param {Object} [settings] settings to configure the tooltip.
- * @param {Number} [settings.delay=300] Hover delay before the tooltip is shown 
- * @param {Object} [settings.mouseOffset={left: 12, top: 22}] Position of tooltip from cursor 
- * @param {Bool}   [settings.useFormatting=true] Whether text formatting will be used. See Tags
- * @param {Object} [settings.tags={"#":"h4", "*":"b", "_":"i", "|":"p"}]
- *   {[special character]:[associated tag],[...]}
- *   Special formatting options for the tooltip. The special characters will be 
- *   replaced with the tag indicated. e.g. title="text with *bold*" becomes 
- *   "text with <b>bold</b>" in the tooltip. 
- * @param {String} [settings.tooltipClass] Adds a optional class to the tooltip
- */
+/*: ZenTooltip - Simple jQuery Tooltip
+    #license MIT or GPL Version 2 licenses. Like jQuery http://jquery.org/license
+    #author Jethro Larson http://jethrolarson.com
+
+    #requires - jQuery 1.2 or higher {@link http://jquery.com}
+    #takes: @settings: #object
+    @settings.delay: #int - Hover delay before showing tooltip
+    @settings.mouseOffset: #object{@left #int, @top #int} - pixel offset from cursor
+    @settings.useFormatting: #bool - Whether text formatting will be used. #see @tags
+    @settings.tags: #object - Special formatting options for the tooltip. #see documentation
+    @settings.tooltipClass: #string - Adds a optional class to the tooltip
+*/
 (function($){
   $.fn.zentooltip = function(settings){
     var $elems = this;
@@ -72,9 +53,7 @@
         tooltip.css("left",loc.left-(ttwidth+settings.mouseOffset.left));
       }
       
-      /** Optional IE6 iframe hack 
-       * @requires bgiframe plugin {@link http://docs.jquery.com/Plugins/bgiframe}
-       */
+      //: #optional IE6 iframe hack. #requires http://docs.jquery.com/Plugins/bgiframe
       if($.fn.bgiframe) tooltip.bgiframe();
     };
     $elems.hover(function(e){
@@ -88,11 +67,7 @@
       $(this).data("title",this.title);
     }).removeAttr("title");
     
-    /** Formats the text according to {@link settings.tags} 
-     * @param {String} text to be transformed 
-     * @returns Formatted HTML
-     * @type String
-     */
+    //: Formats @text according to @settings.tags. #returns #HTML
     function transformTitle(text){
       $.each(settings.tags, function(key,val){
         var spl = text.split(key),
@@ -122,6 +97,6 @@
           + document.documentElement.scrollTop;
       }
     });
-    return this;
+    return this;//Allow Chaining
   };
 })(jQuery);
