@@ -2,7 +2,7 @@
 
    1. Include [jQuery 1.2](http://jquery.com) or higher, jquery.zentooltip.js, and zenTooltip.css on your page
    2. Add a title attribute to the elements with the text to be displayed.
-   3. Invoke the tooltip plugin `$(".tooltip").zenTooltip();` on those elements
+   3. Invoke the tooltip plugin on those elements. e.g., `$(".tooltip").zenTooltip();`
 
 ##Features
 
@@ -11,7 +11,7 @@
   * Text formatting allows bold, italic, and other styles in the tooltips.
   * Supports [jquery.bgiframe](http://docs.jquery.com/Plugins/bgiframe) hack, if included.
   * Compressed version less than 2k
-  * Tested in FF3, FF3.5, IE6, IE7, IE8, Chrome
+  * Tested in FF3.5, IE6, IE7, IE8, Chrome
 
 ##Text Formatting
 
